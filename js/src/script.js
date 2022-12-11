@@ -1,7 +1,7 @@
 
 let inner = document.getElementById("inner"); // Добавить строку
 let show = document.getElementById("show"); // Загрузить таблицу 
-let B = document.getElementById("B"); // Загрузить таблицу 
+let form = document.getElementById("Form"); // Загрузить таблицу 
 
 
 
@@ -19,14 +19,15 @@ var People =[
     
 ]
 
-var contr = document.querySelector("select").Index
+
 let contry = Bus
 
 show.onclick = ()=>{ 
+    var contr = document.querySelector(".list").index
+        console.log(contr)
     table.remove() // - удаление таблицы 
-    setInterval(showTable(B, contry),5000)
-    
-    
+    showTable(form, contry)
+        
 }
 
 
@@ -50,7 +51,6 @@ inner.onclick = () =>{
     contry.push(a[0]) // добовляем в масив данные 
     let lastr = table.lastChild
 
-        console.log(lastr.childNodes.length)
             for( i = 0; i < a[0].length; i++){
                 lastr.childNodes[i].innerHTML = a[0][i]
             }  
