@@ -1,25 +1,26 @@
 
+//let table = document.getElementById("table"); // Добавить строку
 let inner = document.getElementById("inner"); // Добавить строку
 let show = document.getElementById("show"); // Загрузить таблицу 
 let form = document.getElementById("Form"); // Загрузить таблицу 
 
 
 
-var Bus =[
+let Bus =[
     ["№пп", "Марка", "Модель","Год выпуска ","Класс"],
     [1,"Setra","S317HDH",2008,"БК"],
     [2,"Man","LionS",2009,"БК"],
     [3,"Mercedes","Tuorismo",2015,"БК"],
 ]
 
-var People =[
+let People =[
     ["№пп","Имя", "Фамилия", "Отчество","Год рождения ",],
     [1,"Иван","Алексеевич","Сидоров",1989],
     [2,"Александр","Сергеевич","Пушкин",1995],
     
 ]
 
-var truk = [
+let truk = [
     ["№пп","Марка", "Модель", "Год выпуска","Гос №", "Тоннаж","Тип"],
     [1,"Mercedes","Sprinter",2010,"е215сн190","2 тонны","Фургон"],    
 
@@ -47,6 +48,14 @@ document.addEventListener ("contextmenu", event => {
 // Функция добавляющая строку 
 
 inner.onclick = () =>{
+
+    for (let j = 1; j < contry[1].length; j++){
+        var x  = document.getElementById(j).value
+        let y = [[x],]
+        console.log (x)
+        console.log (y)
+        //consol.log(table[1].length)
+    }
     
     let val = contry.length 
     let marka = document.getElementById('1').value
@@ -55,10 +64,11 @@ inner.onclick = () =>{
     let clas = document.getElementById('4').value
 
     let a = [[val,marka,model,yer,clas],]
+    //console.log(a)
     contry.push(a[0]) // добовляем в масив данные 
     let lastr = table.lastChild
 
-            for( i = 0; i < a[0].length; i++){
+            for( let i = 0; i < a[0].length; i++){
                 lastr.childNodes[i].innerHTML = a[0][i]
             }  
         inp(table, contry)
