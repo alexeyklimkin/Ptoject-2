@@ -4,7 +4,7 @@ let inner = document.getElementById("inner"); // Добавить строку
 let show = document.getElementById("show"); // Загрузить таблицу 
 let form = document.getElementById("Form"); // Загрузить таблицу 
 
-
+// Масивы
 
 let Bus =[
     ["№пп", "Марка", "Модель","Год выпуска ","Класс"],
@@ -26,6 +26,9 @@ let truk = [
 
 ]
 
+
+
+/// код 
 
 let contry = Bus
 
@@ -49,27 +52,21 @@ document.addEventListener ("contextmenu", event => {
 
 inner.onclick = () =>{
 
-    for (let j = 1; j < contry[1].length; j++){
-        var x  = document.getElementById(j).value
-        let y = [[x],]
-        console.log (x)
-        console.log (y)
-        //consol.log(table[1].length)
-    }
-    
     let val = contry.length 
-    let marka = document.getElementById('1').value
-    let model = document.getElementById('2').value
-    let yer = document.getElementById('3').value
-    let clas = document.getElementById('4').value
+    let arr =[val]
+    
+    for (let j = 1; j < contry[1].length; j++){
+        let x  = document.getElementById(j).value
+        arr.push(x)
 
-    let a = [[val,marka,model,yer,clas],]
-    //console.log(a)
-    contry.push(a[0]) // добовляем в масив данные 
+    }
+      
+   
+    contry.push(arr) // добовляем в масив данные 
     let lastr = table.lastChild
 
-            for( let i = 0; i < a[0].length; i++){
-                lastr.childNodes[i].innerHTML = a[0][i]
+            for( let i = 0; i < arr.length; i++){
+                lastr.childNodes[i].innerHTML = arr[i]
             }  
         inp(table, contry)
 }
