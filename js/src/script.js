@@ -4,7 +4,7 @@ let inner = document.getElementById("inner"); // Добавить строку
 let show = document.getElementById("show"); // Загрузить таблицу 
 let form = document.getElementById("Form"); // Загрузить таблицу 
 
-// Масивы
+// ******Масивы********
 
 let Bus =[
     ["№пп", "Марка", "Модель","Год выпуска ","Класс"],
@@ -44,35 +44,42 @@ show.onclick = ()=>{
 
 document.addEventListener ("contextmenu", event => { 
     event.preventDefault()
-    
 
 });
 
-// Функция добавляющая строку 
+
 
 inner.onclick = () =>{
-
-    let val = contry.length 
-    let arr =[val]
-    
-    for (let j = 1; j < contry[1].length; j++){
-        let x  = document.getElementById(j).value
-        arr.push(x)
-
-    }
-      
-   
-    contry.push(arr) // добовляем в масив данные 
-    let lastr = table.lastChild
-
-            for( let i = 0; i < arr.length; i++){
-                lastr.childNodes[i].innerHTML = arr[i]
-            }  
-        inp(table, contry)
+    will(contry)
+    inp(table, contry)
 }
 
 
 // table.rows.length - Длина таблицы
+
+/// ****** ФУНКЦИИ *****
+
+// will - добовляет строку 
+
+
+function will(contry) {
+    let val = contry.length 
+    let arr =[val]
+    
+        for (let j = 1; j < contry[1].length; j++){
+            let x  = document.getElementById(j).value
+            arr.push(x)
+        }
+
+    contry.push(arr) // добовляем в масив данные 
+    
+    let lastr = table.lastChild
+
+        for( let i = 0; i < arr.length; i++){
+             lastr.childNodes[i].innerHTML = arr[i]
+        }
+                
+}
 
 // showTable - Создать таблицу 
 
