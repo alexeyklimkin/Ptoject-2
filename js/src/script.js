@@ -19,11 +19,17 @@ var People =[
     
 ]
 
+var truk = [
+    ["№пп","Марка", "Модель", "Год выпуска","Гос №", "Тоннаж","Тип"],
+    [1,"Mercedes","Sprinter",2010,"е215сн190","2 тонны","Фургон"],    
+
+]
+
 
 let contry = Bus
 
 show.onclick = ()=>{ 
-    var contr = document.querySelector(".list").index
+    var contr = document.querySelector(".list").value
         console.log(contr)
     table.remove() // - удаление таблицы 
     showTable(form, contry)
@@ -41,6 +47,7 @@ document.addEventListener ("contextmenu", event => {
 // Функция добавляющая строку 
 
 inner.onclick = () =>{
+    
     let val = contry.length 
     let marka = document.getElementById('1').value
     let model = document.getElementById('2').value
