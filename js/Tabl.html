@@ -7,20 +7,61 @@
 </head>
 <style> </style>
 <body>
-    <div it = "menu">
-    <select id = "list" class="list">
-        <option value = 'Bus'> Bus </option>
-        <option value = 'People' > People </option>
-        <option selected = "selected"> ... </option>
-    </select>
-        <button class="button" id="show"> Загрузить таблицу </button>
-        <button class="button" id ="inner"> Добавить строку </button>
-        <button class="button" id ="i"> Добавить столбец </button>
+    <div class = "menu">
+        <h1>База данных</h1>
+        <div class="logo"> </div>
+        <hr>
+          <div class="toolbar">
+            <ul class="toolbar-b">
+                <li><a href=""> Данные </a>
+                <ul>
+                    <li><a href="">Выбрать массив</a></li>
+                    <li><a href="" id="CreatArray"  >Добавить моссив</a></li>
+                    <li><a href="">Удалить массив</a></li>
+                </ul>
+                </li>
+                <li><a href=""> Таблица </a>
+                    <ul>
+                        <li id="show"><a href="">Загрузить таблицу</a></li>
+                        <li id ="i"><a href="">Добавить столбец</a></li>
+                        <li><a href="">Удалить столбец</a></li>
+                        <li><a href="" id ="inner" >Добавит строку</a></li>
+                        <li><a href="">Удалить строку</a></li>
+                        <li id ="removtable"> <a href="">Удалить таблицу</a></li>
+                    </ul>
+                </li>
+                <li><a href=""> Аналитика </a></li>
+                <li><a href=""> Диаграмма </a></li>
+                <li><a href="">Кнопка 5</a></li>
+            </ul>
+            <select id = "list" class="list">
+                <option value = 'Bus'> Bus </option>
+                <option value = 'People' > People </option>
+                <option value = 'Truck' > Truck </option>
+                <option selected = "selected"> ... </option>
+            </select>      
+        </div>
     </div>
-    <div id = "Form">
-       <table id = "table"></table>
+    <div id = "Form" class = "Form">
+       <!--<table Class ="table" id = "table"></table>-->
+        <div class="CreatArray" >
+            <h3>Создать масив</h3>
+            <input type="text" name="" id="">
+            <div>
+                <button>
+                    Добавить
+                </button>
+                <button>
+                    Сохранить массив
+                </button>
+                <button>
+                    Отмена
+                </button>
+            </div>
+        </div>
     </div>
 </body>
-<script src="src/script.js"></script>
 <script src="src/db.js"></script>
+<script src="src/script.js"></script>
+
 </html>

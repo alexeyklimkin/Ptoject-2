@@ -1,5 +1,6 @@
 body{
     margin: 0px;
+    background-color: azure;
 }
 
 .table{
@@ -8,18 +9,17 @@ body{
     border: 1px solid #000000;
     border-collapse: collapse;
     background-color: rgb(255, 255, 255);
+
 }
 
-.table th{
-    font-weight: bold;
-    padding: 0px;
-    background: #efefef;
-    border: 2px solid #0f0f0f;
+.table tr:nth-child(1){
+    background-color: rgb(95, 119, 255);
+    color: rgb(255, 255, 255);
 }
 
 .table td {
     height: 25px;
-    border: 1px solid #000000;
+    border: 1px solid rgb(0, 38, 255);
     padding: 5px;
     text-align: center;
 }
@@ -38,29 +38,213 @@ body{
     border: 1px solid rgb(255, 255, 255);
 }
 
-.button{
+select{
+    margin: 15px;
+    padding: 15px;
     width: 200px;
     height: 25px;
+    text-align: center;
+}
+.Form{
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+}
+
+
+.menu{
+    background: linear-gradient(-45deg, rgb(39, 192, 253) 30%,rgb(95, 119, 255) );
+    margin: 0px 0px 2px 0px;
+    padding: 5px 0px 0px 0px;
+    position: relative;
+    width: 100%;
+}  
+.menu h1{
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+
+}
+
+.logo{
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-color: #ff0000;
+    left: 0px;
+    top: 0px;
+}
+
+ /* Toolbar */
+
+.toolbar{
+    width: 100%;
+    height: auto;
+    padding: 0px; 
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.toolbar-b{
+    display: flex;
+    justify-content: center;
+}
+
+.toolbar-b li{
+    padding: 0px;
+    margin: 0px 10px;
+    width: 200px; 
+    height: auto;
+    display: block;
+    position: relative;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px 0px 5px ;    
+}
+
+.toolbar-b li a{
+    display: block;
+    text-decoration: none; 
+    padding: 10px;
+    color: rgb(0, 0, 0);
     
 }
 
-select{
-  margin: 10px 0px;
-  padding: 0px;
-  width: 200px;
-  height: 25px;
-  text-align: center;
+.toolbar-b li :hover{
+    width: auto;
+    border-radius: 5px;
+    background-color: rgb(0, 119, 255);
+    color: #ffffff;
 }
 
-div{
-    background-color: bisque;
-    margin: 0px 0px 2px 0px;
-    padding: 5px;
-    position: initial;
-}  
+.toolbar-b li:hover > ul {
+    display: block;
+}
 
-#Form{
+.toolbar-b li ul{
+    margin: 0px;
+    padding: 0px;
+    display: none;
     position: absolute;
-    height: 100%;
+    left: 0%;
+    top: 100%;
+    width: auto;
+    border-radius: 5px;
+    background: linear-gradient(-45deg, rgb(39, 192, 253) 30%,rgb(95, 119, 255) );
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+    transition: display 200ms ;
+}
+
+/*
+.toolbar {
     width: 100%;
+    height: auto;
+    padding: 0px; 
+    margin: 0px; 
+    list-style: none;
+    border-top: 1px solid rgb(0, 0, 0);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+
+.toolbar-b{
+    left: 0;
+    top: 0;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+.toolbar-b li{
+    padding: 0px;
+    margin: 0px 15px;
+    width: 100px;
+    height: auto;
+    display: inline-block;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+}
+
+
+.toolbar-b li a{
+    text-decoration: none;
+    display: block; 
+    padding: 5px 0px 5px 0px;
+    color: rgb(0, 0, 0);  
+}
+
+.toolbar-b li:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);;
+    
+}
+.toolbar-b li:hover > ul {
+    display: block;
+}
+
+.toolbar-b li ul{
+    margin: 0px 0px;
+    padding: 0px;
+    display: none;
+    position: absolute;
+    left: 0%;
+    top: 100%;
+    background: linear-gradient(-45deg, rgb(39, 192, 253) 30%,rgb(95, 119, 255) );
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+    transition: display 200ms ;
+}
+
+.toolbar-b li ul li{
+ padding: 0px;
+ margin: 0px;
+}*/
+
+.CreatArray{
+    padding: 5px;
+    margin: 0px 0px 20px;
+    width: 40%;
+    height: auto;
+    display: block;
+    background-color: rgb(95, 119, 255);
+    box-shadow: 5px 10px 15px 0 rgb(0 0 0 / 50%);
+    border: 1px solid rgb(0, 38, 255);
+    
+}
+
+.CreatArray h3{
+    margin: 0px 0px 15px 0px;;
+    display: flex;
+    justify-content: center;
+    color: white;
+    
+}
+.CreatArray input{
+    margin: 0px 0px 15px 0px;
+    padding: 0px ;
+    width: 80%;
+    height: 30px;
+    border: 1px solid rgb(0, 38, 255);
+
+}
+
+.CreatArray button{
+    width: 30%;
+    height: 30px;
+    margin: 0px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 38, 255);
+    border-radius: 10px;
+}
+.CreatArray button:hover{
+    background-color: aqua;
 }

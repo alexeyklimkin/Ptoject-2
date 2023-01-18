@@ -1,51 +1,70 @@
 
-//let table = document.getElementById("table"); // Добавить строку
+
+// создание переменных
+
+
 let inner = document.getElementById("inner"); // Добавить строку
-let show = document.getElementById("show"); // Загрузить таблицу 
-let form = document.getElementById("Form"); // Загрузить таблицу 
-
-// ******Масивы********
-
-let Bus =[
-    ["№пп", "Марка", "Модель","Год выпуска ","Класс"],
-    [1,"Setra","S317HDH",2008,"БК"],
-    [2,"Man","LionS",2009,"БК"],
-    [3,"Mercedes","Tuorismo",2015,"БК"],
-]
-
-let People =[
-    ["№пп","Имя", "Фамилия", "Отчество","Год рождения ",],
-    [1,"Иван","Алексеевич","Сидоров",1989],
-    [2,"Александр","Сергеевич","Пушкин",1995],
-    
-]
-
-let truk = [
-    ["№пп","Марка", "Модель", "Год выпуска","Гос №", "Тоннаж","Тип"],
-    [1,"Mercedes","Sprinter",2010,"е215сн190","2 тонны","Фургон"],    
-
-]
-
-
-
-/// код 
-
+let show = document.getElementById("show"); // Показать таблицу 
+let form = document.getElementById("Form"); // 
+let CreatArray = document.getElementById("CreatArray"); // 
+let removtable = document.getElementById("removtable");
+let select = document.getElementById("list")
 let contry = Bus
 
-show.onclick = ()=>{ 
-    var contr = document.querySelector(".list").value
-        console.log(contr)
-    table.remove() // - удаление таблицы 
-    showTable(form, contry)
-        
-}
-
-
+/// код 
 
 document.addEventListener ("contextmenu", event => { 
     event.preventDefault()
 
 });
+
+document.addEventListener ("click", event => { 
+    event.preventDefault()
+
+});
+
+removtable.addEventListener ("click", () => { 
+    table.remove()
+});
+
+
+CreatArray.addEventListener ("click", () => { 
+    if (document.getElementById("table") !== null) {
+        table.remove()  
+        inpCA(form)
+    }
+    else {
+        inpCA(form)
+    }    
+})
+
+
+
+
+show.onclick = ()=>{
+        
+            var a  = select[select.selectedIndex].text
+                if (a == 'People') {
+                contry = People 
+                } else if (a == 'Bus'){
+                    contry = Bus
+                }
+                else if (a == 'Truck'){
+                    contry = Truck
+                }
+
+    if (document.getElementById("table") !== null) {
+        alert("Таблица есть");
+        table.remove() // - удаление таблицы 
+        showTable(form, contry)
+    }
+    else {
+        alert("Таблицы нет");
+        showTable(form, contry)
+    }
+
+}
+
 
 
 
@@ -54,15 +73,11 @@ inner.onclick = () =>{
     inp(table, contry)
 }
 
-
+/// ****** ФУНКЦИИ *****
 // table.rows.length - Длина таблицы
 
-/// ****** ФУНКЦИИ *****
-
-// will - добовляет строку 
-
-
 function will(contry) {
+
     let val = contry.length 
     let arr =[val]
     
@@ -80,6 +95,9 @@ function will(contry) {
         }
                 
 }
+
+
+// will - добовляет строку 
 
 // showTable - Создать таблицу 
 
@@ -118,12 +136,25 @@ function inp(table, contry){
 table.append(tr);
 }
 
+// Таблица для создания масива
+
+function inpCA (box){
+    let table = document.createElement("table")
+    table.className ="table"
+    table.id = "table"
+        let tr = document.createElement("tr");    
+                for ( let i = 0; i < 5; i++) {
+                        let td = document.createElement("td")
+                        let input = document.createElement("input")
+                            td.innerHTML = ""
+                            input.className ="input"
+                            input.id = i
+                        td.appendChild(input)
+            tr.appendChild(td)}
+        table.append(tr)
+    box.append(table)
+}
 
 
-
-
-
-
-
-
+let form2 = document.getElementsByClassName("CreatArray")
 
