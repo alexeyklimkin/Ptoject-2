@@ -39,7 +39,7 @@ body{
 }
 
 select{
-    margin: 15px;
+    margin: 0px;
     padding: 15px;
     width: 200px;
     height: 25px;
@@ -92,18 +92,19 @@ select{
 .toolbar-b{
     display: flex;
     justify-content: center;
+    margin: 0px;
+    padding: 0px;
 }
 
 .toolbar-b li{
     padding: 0px;
-    margin: 0px 10px;
+    margin: 0px;
     width: 200px; 
     height: auto;
     display: block;
     position: relative;
     list-style: none;
     font-family: Arial, Helvetica, sans-serif;
-    margin: 0px 0px 5px ;    
 }
 
 .toolbar-b li a{
@@ -123,6 +124,7 @@ select{
 
 .toolbar-b li:hover > ul {
     display: block;
+    background-color: #ffffff;
 }
 
 .toolbar-b li ul{
@@ -134,7 +136,6 @@ select{
     top: 100%;
     width: auto;
     border-radius: 5px;
-    background: linear-gradient(-45deg, rgb(39, 192, 253) 30%,rgb(95, 119, 255) );
     box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
     transition: display 200ms ;
 }
@@ -214,13 +215,16 @@ select{
     margin: 0px 0px 20px;
     width: 40%;
     height: auto;
-    display: block;
+    display: none;
     background-color: rgb(95, 119, 255);
     box-shadow: 5px 10px 15px 0 rgb(0 0 0 / 50%);
     border: 1px solid rgb(0, 38, 255);
-    
+    border-radius: 10px;
 }
 
+.CreatArray.active{
+    display: block;
+}
 .CreatArray h3{
     margin: 0px 0px 15px 0px;;
     display: flex;

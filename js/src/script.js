@@ -1,21 +1,19 @@
 
 
 // создание переменных
-
-
-let inner = document.getElementById("inner"); // Добавить строку
-let show = document.getElementById("show"); // Показать таблицу 
-let form = document.getElementById("Form"); // 
-let CreatArray = document.getElementById("CreatArray"); // 
-let removtable = document.getElementById("removtable");
-let select = document.getElementById("list")
-let contry = Bus
+    let inner = document.getElementById("inner"); // Добавить строку
+    let show = document.getElementById("show"); // Показать таблицу 
+    let form = document.getElementById("Form"); // 
+    let CreatArray = document.getElementById("ButtonCreatArray"); // открыть окно создания массива
+    let cancel = document.getElementById("cancel")
+    let removtable = document.getElementById("removtable");// кнопка удалить таблицу
+    let select = document.getElementById("list")
+    let contry = Bus
 
 /// код 
 
 document.addEventListener ("contextmenu", event => { 
     event.preventDefault()
-
 });
 
 document.addEventListener ("click", event => { 
@@ -29,16 +27,19 @@ removtable.addEventListener ("click", () => {
 
 
 CreatArray.addEventListener ("click", () => { 
-    if (document.getElementById("table") !== null) {
+    /*if (document.getElementById("table") !== null) {
         table.remove()  
         inpCA(form)
     }
     else {
         inpCA(form)
-    }    
+    }*/    
+    showCreatArray("CreatArray")
 })
 
-
+cancel.addEventListener("click", ()=>{
+    hideElement("CreatArray")
+})
 
 
 show.onclick = ()=>{
@@ -156,5 +157,30 @@ function inpCA (box){
 }
 
 
-let form2 = document.getElementsByClassName("CreatArray")
+// Вызов окна
 
+function showCreatArray(Idname){
+    document.getElementById(Idname).style.display ="block"
+}
+
+// Отмена вызова
+
+function hideElement(Idname){
+    document.getElementById(Idname).style.display ="none"
+}
+
+
+function inpCA1(form){
+    let input = document.createElement("input")
+    input.innerHTML = ""
+    input.className ="input"
+    input.id = i
+    form.append(input)
+}
+
+    
+let button1 = document.getElementById("button1")
+
+button1.addEventListener("click", ()=>{
+    inpCA1("CreatArray")
+})
