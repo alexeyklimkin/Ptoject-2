@@ -9,15 +9,21 @@
 <body>
     <div class = "menu">
         <h1>База данных</h1>
-        <div class="logo"> </div>
+        <div class="logo"> <img src="img/3868786.png"></div>
         <hr>
           <div class="toolbar">
             <ul class="toolbar-b">
                 <li><a href=""> Данные </a>
                 <ul>
-                    <li><a href="">Выбрать массив</a></li>
-                    <li><a href="" id="ButtonCreatArray"  >Добавить массив</a></li>
-                    <li><a href="">Удалить массив</a></li>
+                    <li><a href="">Выбрать данные</a>
+                        <ul>
+                            <li><a href="">Автобусы</a></li>
+                            <li><a href="">Грузовики</a></li>
+                            <li><a href="">Водители</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="" id="ButtonCreatArray"  >Создать массив данных</a></li>
+                    <li><a href="">Удалить массив данных</a></li>
                 </ul>
                 </li>
                 <li><a href=""> Таблица </a>
@@ -25,39 +31,51 @@
                         <li id="show"><a href="">Загрузить таблицу</a></li>
                         <li id ="i"><a href="">Добавить столбец</a></li>
                         <li><a href="">Удалить столбец</a></li>
-                        <li><a href="" id ="inner" >Добавит строку</a></li>
+                        <li id ="inner"><a href="">Добавит строку</a></li>
                         <li><a href="">Удалить строку</a></li>
-                        <li id ="removtable"> <a href="">Удалить таблицу</a></li>
+                        <li id ="removtable"> <a href="">Закрыть таблицу</a></li>
                     </ul>
                 </li>
-                <li><a href=""> Аналитика </a></li>
+                <li><a href=""> Аналитика </a>
+                    <ul>
+                        <li id="showfonction"><a href="">Функции</a>
+                            <ul id="list">
+                            </ul>
+                        </li>
+                        <li id="showfonction"><a href="">Показатели</a></li>
+                    </ul>
+                </li>
                 <li><a href=""> Диаграмма </a></li>
-                <li><a href="">Кнопка 5</a></li>
             </ul>
-            <select id = "list" class="list">
+            <select id = "select" class="select">
                 <option value = 'Bus'> Bus </option>
                 <option value = 'People' > People </option>
                 <option value = 'Truck' > Truck </option>
                 <option selected = "selected"> ... </option>
-            </select>      
+            </select>  
         </div>
     </div>
+    
+
     <div id = "Form" class = "Form">
-       <!--<table Class ="table" id = "table"></table>-->
-        <div id="CreatArray" class="CreatArray" >
-            <h3>Создать масив</h3>
-            <input type="text" name="" id="">
-            <div>
-                <button id="button1">
-                    Добавить
-                </button>
-                <button>
-                    Сохранить массив
-                </button>
-                <button id="cancel">
-                    Отмена
-                </button>
-            </div>
+    </div>
+
+    <div id="CreatArray" class="CreatArray" >
+        <h3>Создать масив</h3>
+        <div id="CreatArray-1" >
+        <input type="text" name="" id="0">
+        </div>
+        
+        <div>
+            <button id="button1">
+                Добавить
+            </button>
+            <button id="button2" >
+                Сохранить массив
+            </button>
+            <button id="cancel">
+                Отмена
+            </button>
         </div>
     </div>
 
