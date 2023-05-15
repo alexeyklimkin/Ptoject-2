@@ -9,7 +9,7 @@
     let cancel = document.getElementById("cancel")
     let removtable = document.getElementById("removtable");// кнопка удалить таблицу
     let select = document.getElementById("select")
-    let contry = Bus
+    let contry = db["Автобусы"]
 
 /// обработчики событий 
 
@@ -28,7 +28,6 @@ removtable.addEventListener ("click", () => {
 
 
 CreatArray.addEventListener ("click", () => { 
-    //inpCA(form2)
     ShowElement("CreatArray")
 })
 
@@ -37,16 +36,11 @@ cancel.addEventListener("click", ()=>{
 })
 
 
+selectDB("listDB",db) // вывод списка свойств в объекта DB
+
+
+
 show.onclick = ()=>{
-    var a  = select[select.selectedIndex].text
-                if (a == 'People') {
-                contry = People 
-                } else if (a == 'Bus'){
-                    contry = Bus
-                }
-                else if (a == 'Truck'){
-                    contry = Truck
-                }
 
     if (document.getElementById("table") !== null) {
         alert("Таблица есть");
@@ -111,7 +105,7 @@ function will(contry) {
     let val = contry.length 
     let arr =[val]
     
-        for (let j = 1; j < contry[1].length; j++){
+        for (let j = 1; j < contry[0].length; j++){
             let x  = document.getElementById(j).value
             arr.push(x)
         }

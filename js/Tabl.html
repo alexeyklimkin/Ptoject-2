@@ -11,15 +11,12 @@
         <h1>База данных</h1>
         <div class="logo"> <img src="img/3868786.png"></div>
         <hr>
-          <div class="toolbar">
+        <div class="toolbar">
             <ul class="toolbar-b">
                 <li><a href=""> Данные </a>
                 <ul>
                     <li><a href="">Выбрать данные</a>
-                        <ul>
-                            <li><a href="">Автобусы</a></li>
-                            <li><a href="">Грузовики</a></li>
-                            <li><a href="">Водители</a></li>
+                        <ul id="listDB">
                         </ul>
                     </li>
                     <li><a href="" id="ButtonCreatArray"  >Создать массив данных</a></li>
@@ -47,12 +44,10 @@
                 </li>
                 <li><a href=""> Диаграмма </a></li>
             </ul>
-            <select id = "select" class="select">
-                <option value = 'Bus'> Bus </option>
-                <option value = 'People' > People </option>
-                <option value = 'Truck' > Truck </option>
-                <option selected = "selected"> ... </option>
-            </select>  
+            <div class="SearchForm">
+                <input type="text" placeholder="Поиск..." class="search">
+                <button id = "SearchButton"  class="SearchButton"> </button>
+            </div>
         </div>
     </div>
     
@@ -81,8 +76,8 @@
 
     
 </body>
+<script src="src/function.js"></script>
 <script src="src/db.js"></script>
 <script src="src/script.js"></script>
-<script src="src/function.js"></script>
 
 </html>

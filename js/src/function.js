@@ -6,36 +6,36 @@ let FicA = 10000000 // Оборотные средства Fixed Assets
 let Revenue = 500000 // Выручка Revenue
 let Expenses = 300000 // Затраты
 
-//function profit  - Функция расчета прибыли проекта 
-//function netprofit - Функция расчета чистой прибыли проекта netprofit
-//function profitability -  Функция рентабельности
-// function Sum() - Сумма
 
 const economic = {
-    profit (Revenue,Expenses){
+    //function profit  - Функция расчета прибыли проекта 
+    Profit (Revenue,Expenses){
     let c = Revenue-Expenses
     alert( "Прибыль от проекта составит "+ c )
     return c},
 
-    netprofit (Revenue,Expenses){
+    //function netprofit - Функция расчета чистой прибыли проекта netprofit
+    Netprofit (Revenue,Expenses){
     let c = 1-0.2
     let d = (Revenue-Expenses)*c
     alert( "Чистая прибыль от проекта составит "+ d )
     return d},
 
-    profitability (Revenue, Expenses,b){
+    //function profitability -  Функция рентабельности
+    Profitability (Revenue, Expenses,b){
     let d = (Revenue-Expenses)*100/b
     alert( "Рентабельность проекта составит: "+ d+"%" )
     return d+"%"},
 
-    sum(){
+    // function Sum() - Сумма
+    Sum(){
     var sum = 0 
     for ( let i = 0; i < arguments.length; i++){
         sum += arguments[i]
     }
     return sum},
 
-    averag(){
+    Averag(){
     let sum = 0 
     for ( let i = 0; i < arguments.length; i++){
         sum += arguments[i]
@@ -43,9 +43,59 @@ const economic = {
 
     let averag = sum/arguments.length
     return averag
-    }
+    },
     
 }
+
+////////////////////////////////////////////
+// Функция ввыода списка свойств объекта///
+//////////////////////////////////////////
+
+function selectDB (form,arr){
+
+    let listdb = document.getElementById(form)
+ 
+         for (var key in arr) {  
+             let li = document.createElement("li")
+                 let a = document.createElement("a")
+                 a.innerHTML = key
+                 a.href =""
+                 a.dataset = key
+                     a.onclick = (event)=>{
+                         contry = arr[event.target.textContent]
+                         console.log(contry)
+                     }
+                 li.append(a)
+             listdb.append(li)
+         }
+   
+}
+
+function selectD (form,arr){
+
+    let listdb = document.getElementById(form)
+
+        for (lastProperty in db); { ;
+             let li = document.createElement("li")
+                 let a = document.createElement("a")
+                 a.innerHTML = lastProperty
+                 a.href =""
+                 a.dataset = lastProperty
+                     a.onclick = (event)=>{
+                         contry = arr[event.target.textContent]
+                     }
+                 li.append(a)
+             listdb.append(li)
+         }
+   
+}
+
+
+
+
+//////////////////////////////////////////////////////
+// Вывод в список мотодов объекта economic их вызов// 
+////////////////////////////////////////////////////
 
 let list = document.getElementById("list")
 
@@ -53,17 +103,17 @@ for (var key in economic) {
     let li = document.createElement("li")
         let a = document.createElement("a")
         a.innerHTML = key
+        a.href =""
         a.dataset = key
-            a.onclick = ()=>{ a.text 
-                return economic[a.text](Revenue,Expenses,20)}
+            a.onclick = (event)=>{ 
+             economic[event.target.textContent](Revenue,Expenses,20)}
         li.append(a)
     list.append(li)
-    //;
 }
  
-
+////////////////////////////
 //Функция обратоного вызова 
-
+///////////////////////////
 
 function callbackfunction(callback) {
     let a = prompt('Выручка.');
@@ -73,31 +123,13 @@ function callbackfunction(callback) {
 
 let showfonction = document.getElementById("showfonction") 
 
-/*showfonction.addEventListener ("click", () => { 
+showfonction.addEventListener ("click", () => { 
     callback = netprofit
     callbackfunction(callback);  
-});*/
+})
 
 
 
-
-
-
-//************************************************/
-//* Разное* ///
-//************************************************/
-
-
-var myCar = {
-make:"Ford",
-model: "Mustang",
-year: 1969,
-age: 10,
-abx: function (){
- return this.age
-}
-
-}
 
 //************************************************/
 // **********Пример Замыкания ********************/

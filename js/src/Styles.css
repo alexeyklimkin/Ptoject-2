@@ -37,30 +37,8 @@ body{
     border-collapse: collapse;
     border: 1px solid rgb(255, 255, 255);
     outline: none;
-    
 }
 
-.input.hover {
-    border: 1px solid rgb(255, 255, 255);
-}
-
-
-/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-            /*++++++++++ Стиль списка +++++++++++++*/
-/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-
-.select{
-    display: block;
-    border: none;
-    max-width: 215px;
-    width: 100%;
-    text-align: center;
-}
-
-.select option {
-    text-align: center;
-    border: none;
-}
 
 /*****************************************************************/
 .Form{
@@ -168,6 +146,48 @@ body{
     top: 0%;
 }
 
+/*                               строка поиска                                  */
+/********************************************************************************/
+
+.SearchForm{
+    padding: 0px;
+    margin: 0px 0px 0px 5px;
+}
+
+.search{
+    padding: 5px;
+    margin: 0px;
+    width: 80%;
+    font-size: 18px;
+    float: left;
+    background: #f1f1f1;
+    border: 1px solid rgb(128, 128, 128);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: none;
+    outline: none;
+}
+
+
+.SearchButton{
+    width: 15%;
+    padding: 16px;
+    margin: 0px;
+    float: left;
+    background-color: rgb(112, 112, 112);
+    color: white;
+    font-size: 18px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+}
+
+.SearchButton:hover {
+    background-color: rgb(0, 119, 255);
+}
 
 /****************************/
 /* Форма для создания масива*/
@@ -204,7 +224,7 @@ body{
     width: 90%;
     height: 30px;
     border: 1px solid rgb(0, 38, 255);
-
+    outline: none;
 }
 
 .CreatArray button{
