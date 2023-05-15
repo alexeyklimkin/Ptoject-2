@@ -1,61 +1,77 @@
 
-let inner = document.getElementById("inner"); // Добавить строку
-let show = document.getElementById("show"); // Загрузить таблицу 
-let form = document.getElementById("Form"); // Загрузить таблицу 
 
+// Переменные
 
+    let inner = document.getElementById("inner"); // Добавить строку
+    let show = document.getElementById("show"); // Показать таблицу 
+    let form = document.getElementById("Form"); // 
+    let CreatArray = document.getElementById("ButtonCreatArray"); // открыть окно создания массива
+    let cancel = document.getElementById("cancel")
+    let removtable = document.getElementById("removtable");// кнопка удалить таблицу
+    let select = document.getElementById("select")
+    let contry = db["Автобусы"]
 
-var Bus =[
-    ["№пп", "Марка", "Модель","Год выпуска ","Класс"],
-    [1,"Setra","S317HDH",2008,"БК"],
-    [2,"Man","LionS",2009,"БК"],
-    [3,"Mercedes","Tuorismo",2015,"БК"],
-]
-
-var People =[
-    ["№пп","Имя", "Фамилия", "Отчество","Год рождения ",],
-    [1,"Иван","Алексеевич","Сидоров",1989],
-    [2,"Александр","Сергеевич","Пушкин",1995],
-    
-]
-
-
-let contry = Bus
-
-show.onclick = ()=>{ 
-    var contr = document.querySelector(".list").index
-        console.log(contr)
-    table.remove() // - удаление таблицы 
-    showTable(form, contry)
-        
-}
-
-
+/// обработчики событий 
 
 document.addEventListener ("contextmenu", event => { 
     event.preventDefault()
-    
-
 });
 
-// Функция добавляющая строку 
+document.addEventListener ("click", event => { 
+    event.preventDefault()
+    
+});
 
-inner.onclick = () =>{
-    let val = contry.length 
-    let marka = document.getElementById('1').value
-    let model = document.getElementById('2').value
-    let yer = document.getElementById('3').value
-    let clas = document.getElementById('4').value
+removtable.addEventListener ("click", () => { 
+    table.remove()
+});
 
-    let a = [[val,marka,model,yer,clas],]
-    contry.push(a[0]) // добовляем в масив данные 
-    let lastr = table.lastChild
 
-            for( i = 0; i < a[0].length; i++){
-                lastr.childNodes[i].innerHTML = a[0][i]
-            }  
-        inp(table, contry)
+CreatArray.addEventListener ("click", () => { 
+    ShowElement("CreatArray")
+})
+
+cancel.addEventListener("click", ()=>{
+    HideElement("CreatArray")
+})
+
+
+selectDB("listDB",db) // вывод списка свойств в объекта DB
+
+
+
+show.onclick = ()=>{
+
+    if (document.getElementById("table") !== null) {
+        alert("Таблица есть");
+        table.remove() // - удаление таблицы 
+        showTable(form, contry)
+    }
+    else {
+        alert("Таблицы нет");
+        showTable(form, contry)
+    }
 }
+
+document.onkeydown = (event) =>{
+    if (event.key == "Enter"){
+        will(contry)
+        inp(table, contry)
+        
+    }
+    else{
+        return 
+    }
+    
+}
+inner.onclick = () =>{
+    will(contry)
+    inp(table, contry)
+}
+
+/****************************/
+/* Создания Функций
+/*****************************/
 
 
 // table.rows.length - Длина таблицы
@@ -82,6 +98,27 @@ function showTable(box, contry) {
 
 };
 
+// will - добовляет новые данные в массив 
+
+function will(contry) {
+
+    let val = contry.length 
+    let arr =[val]
+    
+        for (let j = 1; j < contry[0].length; j++){
+            let x  = document.getElementById(j).value
+            arr.push(x)
+        }
+
+    contry.push(arr) 
+    
+    let lastr = table.lastChild
+        for( let i = 0; i < arr.length; i++){
+             lastr.childNodes[i].innerHTML = arr[i]
+        }
+                
+}
+
 // inp - добавить строку с вводом данных
 
 function inp(table, contry){
@@ -96,13 +133,3 @@ function inp(table, contry){
     tr.appendChild(td)}
 table.append(tr);
 }
-
-
-
-
-
-
-
-
-
-

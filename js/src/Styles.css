@@ -1,28 +1,34 @@
+
 body{
     margin: 0px;
+    background-color: azure;
 }
 
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+            /*++++++++++ Стиль таблицы +++++++++++++*/
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 .table{
     width: 100%;
     margin-bottom: 20px;
     border: 1px solid #000000;
     border-collapse: collapse;
     background-color: rgb(255, 255, 255);
+
 }
 
-.table th{
-    font-weight: bold;
-    padding: 0px;
-    background: #efefef;
-    border: 2px solid #0f0f0f;
+.table tr:nth-child(1){
+    background-color: rgb(95, 119, 255);
+    color: rgb(255, 255, 255);
 }
 
 .table td {
     height: 25px;
-    border: 1px solid #000000;
+    border: 1px solid rgb(0, 38, 255);
     padding: 5px;
     text-align: center;
 }
+
+
 .input{
     margin: 0%;
     padding: 0%;
@@ -31,36 +37,204 @@ body{
     border-collapse: collapse;
     border: 1px solid rgb(255, 255, 255);
     outline: none;
-    
 }
 
-.input.hover {
-    border: 1px solid rgb(255, 255, 255);
-}
 
-.button{
-    width: 200px;
-    height: 25px;
-    
-}
-
-select{
-  margin: 10px 0px;
-  padding: 0px;
-  width: 200px;
-  height: 25px;
-  text-align: center;
-}
-
-div{
-    background-color: bisque;
-    margin: 0px 0px 2px 0px;
-    padding: 5px;
-    position: initial;
-}  
-
-#Form{
-    position: absolute;
+/*****************************************************************/
+.Form{
     height: 100%;
     width: 100%;
+    padding: 5px;
+}
+
+
+.menu{
+    background: linear-gradient(-45deg, rgb(39, 192, 253) 30%,rgb(95, 119, 255) );
+    margin: 0px 0px 2px 0px;
+    padding: 5px 0px 5px 0px;
+    position: relative;
+    width: 100%;
+}  
+.menu h1{
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+
+}
+
+.logo{
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    width: 100px;
+    height: 100px;
+    left: 20px;
+    top: 0px;
+}
+
+/******************************************************************/
+/************************ Toolbar ********************************/
+/****************************************************************/
+.toolbar{
+    width: 100%;
+    height: auto;
+    padding: 0px; 
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.toolbar-b{
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.toolbar-b li{
+    padding: 0px;
+    margin: 0px;
+    width: 200px; 
+    height: auto;
+    display: block;
+    position: relative;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.toolbar-b li a{
+    display: block;
+    text-decoration: none; 
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    
+}
+
+.toolbar-b li :hover{
+    width: auto;
+    border-radius: 5px;
+    background-color: rgb(0, 119, 255);
+    color: #ffffff;
+}
+
+.toolbar-b li:hover > ul {
+    display: block;
+    background-color: #ffffff;
+}
+
+.toolbar-b li ul{
+    margin: 0px;
+    padding: 0px;
+    display: none;
+    position: absolute;
+    left: 0%;
+    top: 100%;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+    transition: display 200ms ;
+}
+
+.toolbar-b li ul li ul{
+    margin: 0px;
+    padding: 0px;
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0%;
+}
+
+/*                               строка поиска                                  */
+/********************************************************************************/
+
+.SearchForm{
+    padding: 0px;
+    margin: 0px 0px 0px 5px;
+}
+
+.search{
+    padding: 5px;
+    margin: 0px;
+    width: 80%;
+    font-size: 18px;
+    float: left;
+    background: #f1f1f1;
+    border: 1px solid rgb(128, 128, 128);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: none;
+    outline: none;
+}
+
+
+.SearchButton{
+    width: 15%;
+    padding: 16px;
+    margin: 0px;
+    float: left;
+    background-color: rgb(112, 112, 112);
+    color: white;
+    font-size: 18px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+}
+
+.SearchButton:hover {
+    background-color: rgb(0, 119, 255);
+}
+
+/****************************/
+/* Форма для создания масива*/
+/*****************************/
+
+.CreatArray{
+    padding: 5px;
+    margin: 0px 0px 20px;
+    width: 40%;
+    height: auto;
+    display: none;
+    background-color: rgb(95, 119, 255);
+    box-shadow: 5px 10px 15px 0 rgb(0 0 0 / 50%);
+    border: 1px solid rgb(0, 38, 255);
+    border-radius: 10px;
+    position: absolute;
+    left: 30%;
+    top: 30%;
+}
+
+.CreatArray.active{
+    display: block;
+}
+.CreatArray h3{
+    margin: 0px 0px 15px 0px;;
+    display: flex;
+    justify-content: center;
+    color: white;
+    
+}
+.CreatArray input{
+    margin: 0px 0px 15px 0px;
+    padding: 0px ;
+    width: 90%;
+    height: 30px;
+    border: 1px solid rgb(0, 38, 255);
+    outline: none;
+}
+
+.CreatArray button{
+    width: 30%;
+    height: 30px;
+    margin: 0px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 38, 255);
+    border-radius: 10px;
+}
+.CreatArray button:hover{
+    background-color: aqua;
 }
